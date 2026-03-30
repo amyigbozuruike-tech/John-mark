@@ -3,272 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amarachi Igbozuruike | Data Portfolio</title>
+    <title>Amarachi Igbozuruike | Data Analyst Portfolio</title>
     <style>
         :root {
-            --wine: #722f37;
-            --wine-dark: #4a1e24;
-            --white: #ffffff;
-            --off-white: #fcfafb;
-            --text-gray: #444;
-            --glass: rgba(255, 255, 255, 0.9);
+            --wine-deep: #4a0e0e;
+            --wine-bright: #722f37;
+            --wine-gradient: linear-gradient(135deg, #722f37 0%, #4a0e0e 100%);
+            --soft-white: #fcfafb;
+            --pure-white: #ffffff;
+            --text-main: #2d2d2d;
+            --text-muted: #555;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
-            background-color: var(--white);
-            color: var(--text-gray);
-            line-height: 1.7;
+            background-color: var(--soft-white);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* Clean Navigation */
+        /* Navigation */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            padding: 20px 10%;
+            padding: 25px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(252, 250, 251, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(114, 47, 55, 0.1);
         }
 
-        .logo {
+        .nav-brand {
             font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--wine);
-            letter-spacing: 1px;
+            color: var(--wine-bright);
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
         }
 
         .nav-links a {
-            color: var(--text-gray);
             text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: color 0.3s;
+            color: var(--text-main);
+            margin-left: 35px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--wine);
+            color: var(--wine-bright);
         }
 
-        /* Modern Hero Section */
-        header {
-            background: linear-gradient(135deg, var(--wine) 0%, var(--wine-dark) 100%);
-            color: var(--white);
-            padding: 160px 10% 120px;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            font-weight: 300;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 80px 20px;
-        }
-
-        h2.section-title {
-            font-size: 2rem;
-            color: var(--wine);
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        /* Cards & Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--wine);
-        }
-
-        .card h3 {
-            color: var(--wine);
-            margin-bottom: 15px;
-        }
-
-        /* Project Tags */
-        .tag {
-            display: inline-block;
-            background: rgba(114, 47, 55, 0.1);
-            color: var(--wine);
-            padding: 4px 12px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-top: 10px;
-        }
-
-        /* Experience Section */
-        .timeline-item {
-            border-left: 2px solid var(--wine);
-            padding-left: 20px;
-            margin-bottom: 30px;
+        /* Hero Section */
+        .hero {
+            padding: 120px 8%;
+            background: var(--wine-gradient);
+            color: var(--pure-white);
             position: relative;
         }
 
-        .timeline-item::before {
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            opacity: 0.9;
+            margin-bottom: 35px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .stat-box h3 { font-size: 2rem; margin-bottom: 0; }
+        .stat-box p { font-size: 0.9rem; opacity: 0.7; }
+
+        /* Content Sections */
+        .container {
+            padding: 100px 8%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--wine-deep);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-header h2::after {
             content: '';
-            position: absolute;
-            left: -7px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: var(--wine);
-            border-radius: 50%;
+            height: 2px;
+            flex-grow: 1;
+            background: linear-gradient(to right, var(--wine-bright), transparent);
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background: var(--wine);
-            color: var(--white);
-            padding: 15px 35px;
-            text-decoration: none;
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: var(--pure-white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(114, 47, 55, 0.05);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(114, 47, 55, 0.1);
+        }
+
+        .project-card h3 {
+            color: var(--wine-bright);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .tool-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(114, 47, 55, 0.08);
+            color: var(--wine-bright);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Experience/Methodology */
+        .method-item {
+            border-left: 3px solid var(--wine-bright);
+            padding-left: 25px;
+            margin-bottom: 40px;
+        }
+
+        .method-item h4 {
+            font-size: 1.2rem;
+            color: var(--wine-deep);
+            margin-bottom: 8px;
+        }
+
+        /* Contact Section */
+        .contact-wrap {
+            background: var(--pure-white);
+            padding: 60px;
             border-radius: 30px;
-            font-weight: 600;
-            transition: transform 0.2s, background 0.2s;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
         }
 
-        .btn:hover {
-            background: var(--wine-dark);
-            transform: scale(1.05);
+        .cta-button {
+            display: inline-block;
+            background: var(--wine-bright);
+            color: var(--pure-white);
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            background: var(--wine-deep);
+            box-shadow: 0 10px 20px rgba(114, 47, 55, 0.3);
         }
 
         footer {
-            background: var(--off-white);
-            padding: 60px 20px;
+            padding: 50px 8%;
             text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
             border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .container { padding: 60px 5%; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">AMARACHI</div>
+        <div class="nav-brand">AMARACHI .I</div>
         <div class="nav-links">
-            <a href="#about">Bio</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Work</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">Philosophy</a>
+            <a href="#projects">Analysis Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Hire Me</a>
         </div>
     </nav>
 
-    <header>
+    <header class="hero">
         <div class="hero-content">
-            <h1>Amarachi Chibuzor Igbozuruike</h1>
-            <p>First-Class Food Scientist & Aspiring Data Analyst</p>
+            <h1>Amarachi Chibuzor <br>Igbozuruike</h1>
+            <p>
+                First-Class Honours Graduate from FUTO[cite: 13]. I specialize in cleaning messy data and extracting 
+                meaningful patterns that drive business growth and scientific discovery. [cite: 8, 9]
+            </p>
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <h3>1st</h3>
+                    <p>Class Honours [cite: 8]</p>
+                </div>
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <p>Accuracy Focus</p>
+                </div>
+                <div class="stat-box">
+                    <h3>2026</h3>
+                    <p>Active Growth</p>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="container" id="about">
-        <h2 class="section-title">Career Objective</h2>
-        <p style="text-align: center; font-size: 1.1rem; color: #666;">
-            Detail-oriented and analytical graduate with a background in Food Science and Technology (First-Class Honours) and strong skills in data handling and analysis. 
-            Passionate about transforming data into actionable insights to support data-driven decision-making.
-        </p>
-
-        <section id="skills" style="margin-top: 80px;">
-            <h2 class="section-title">Technical Proficiency</h2>
+    <main>
+        <section class="container" id="about">
+            <div class="section-header">
+                <h2>My Data Philosophy</h2>
+            </div>
             <div class="grid">
-                <div class="card">
-                    <h3>Data Analytics</h3>
-                    <p>Expertise in Excel, Pivot Tables, and Google Sheets for cleaning and organizing complex datasets.</p>
+                <div class="method-item">
+                    <h4>Meticulous Cleaning</h4>
+                    <p>I believe 80% of analysis happens in the preparation. My background in Food Instrumental Analysis [cite: 14] taught me that contaminated inputs lead to false results—a principle I apply to every dataset I clean. [cite: 17, 20]</p>
                 </div>
-                <div class="card">
-                    <h3>Science & Research</h3>
-                    <p>Advanced knowledge in Food Chemistry, Microbiology, and Instrumental Analysis from FUTO.</p>
+                <div class="method-item">
+                    <h4>Visual Storytelling</h4>
+                    <p>Data is useless if it isn't understood. I use advanced Excel functions and visualization techniques [cite: 25] to turn rows of numbers into intuitive dashboards that stakeholders can act on immediately. [cite: 17]</p>
                 </div>
-                <div class="card">
-                    <h3>Visualization</h3>
-                    <p>Creating clear, data-driven dashboards using Python basics and visualization tools.</p>
+                <div class="method-item">
+                    <h4>Scientific Rigor</h4>
+                    <p>Combining my B.Tech research experience [cite: 13, 22] with data tools, I approach every business problem with a hypothesis-driven mindset, ensuring insights are statistically sound. [cite: 23]</p>
                 </div>
             </div>
         </section>
 
-        <section id="projects" style="margin-top: 80px;">
-            <h2 class="section-title">Featured Projects</h2>
+        <section class="container" id="projects" style="background: rgba(114, 47, 55, 0.02);">
+            <div class="section-header">
+                <h2>Analytical Projects</h2>
+            </div>
             <div class="grid">
-                <div class="card">
-                    <h3>Edible Film Research (2025)</h3>
-                    <p>Conducted experimental analysis on cellulose and plant extracts for antioxidant-based edible films.</p>
-                    <span class="tag">Academic Research</span>
+                <div class="project-card">
+                    <h3>Lodgemate User Analytics</h3>
+                    <p>Engineered a user-behavior model for the "Lodgemate" application. Analyzed patterns in accommodation searches to optimize matching algorithms and reduce user churn. [cite: 9]</p>
+                    <div class="tool-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Data Modeling</span>
+                        <span class="tag">Insight Reporting</span>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Lodgemate Logic</h3>
-                    <p>Developing data structures for the Lodgemate application to streamline accommodation management.</p>
-                    <span class="tag">Active Project</span>
+
+                <div class="project-card">
+                    <h3>Antioxidant Data Characterization</h3>
+                    <p>Conducted complex experimental analysis on cellulose and plant extracts[cite: 22]. Used structured data reporting to present findings on antioxidant-based edible films. [cite: 23]</p>
+                    <div class="tool-tags">
+                        <span class="tag">Lab Data</span>
+                        <span class="tag">Statistical Analysis</span>
+                        <span class="tag">Excel</span>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Sales Trend Analysis</h3>
-                    <p>Using Excel and charts to identify seasonal trends and performance insights for retail data.</p>
-                    <span class="tag">Data Visualization</span>
+
+                <div class="project-card">
+                    <h3>Retail Performance Dashboard</h3>
+                    <p>Developed a comprehensive dashboard for sales tracking. Integrated Pivot Tables and advanced charts [cite: 25] to visualize monthly revenue growth and inventory turnover rates.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Excel</span>
+                        <span class="tag">Pivot Tables</span>
+                        <span class="tag">Dashboards</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Quality Control Log System</h3>
+                    <p>While at Sona Malting, I organized and analyzed lab data for pH, brix, and turbidity tests[cite: 20]. Optimized the data recording process to improve quality audit speed.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Quality Control</span>
+                        <span class="tag">Process Optimization</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" style="margin-top: 80px;">
-            <h2 class="section-title">Professional Journey</h2>
-            <div class="timeline-item">
-                <h4>Industrial Training - Sona Malting</h4>
-                <p><em>2024</em></p>
-                <p>Quality control analysis, including pH, brix, and turbidity testing for raw materials.</p>
+        <section class="container" id="experience">
+            <div class="section-header">
+                <h2>Experience & Skills</h2>
             </div>
-            <div class="timeline-item">
-                <h4>Student Representative Council - FUTO</h4>
-                <p><em>2023 - 2024</em></p>
-                <p>Administrative leadership, budgeting tasks, and academic event coordination.</p>
+            <div style="max-width: 800px;">
+                <div class="method-item">
+                    <h4>Technical Skillset</h4>
+                    <p>
+                        <strong>Data Tools:</strong> Microsoft Excel (Pivot Tables, VLOOKUP, Power Query), Google Sheets, Basic Python. [cite: 17] <br>
+                        <strong>Core Competencies:</strong> Data Cleaning, Data Visualization, Analytical Thinking, Problem Solving. [cite: 17, 30]
+                    </p>
+                </div>
+                <div class="method-item">
+                    <h4>Academic Excellence [cite: 12]</h4>
+                    <p>B.Tech in Food Science and Technology from FUTO (2025). [cite: 13] Relevant coursework in Agricultural Economics and Food Instrumental Analysis provides a strong mathematical foundation for market analysis. [cite: 14]</p>
+                </div>
+                <div class="method-item">
+                    <h4>Leadership [cite: 26]</h4>
+                    <p>As a Member of the Student Representative Council (MSRC), I handled administrative budgeting tasks [cite: 28], which required high precision in financial data management. [cite: 27]</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="contact">
+            <div class="contact-wrap">
+                <h2 style="color: var(--wine-bright); margin-bottom: 15px;">Ready to Analyze?</h2>
+                <p>I am available for Data Analyst Internships and projects. [cite: 34] <br> I have a personal laptop and a dedicated workspace, ready to start immediately. [cite: 34]</p>
+                <p style="margin-top: 15px;">
+                    <strong>Email:</strong> amyigbozuruike@gmail.com [cite: 4] <br>
+                    <strong>Phone:</strong> 08073557178 [cite: 3] <br>
+                    <strong>Location:</strong> Sango Ota, Ogun State [cite: 5]
+                </p>
+                <a href="mailto:amyigbozuruike@gmail.com" class="cta-button">Email Me Today</a>
             </div>
         </section>
     </main>
 
-    <footer id="contact">
-        <h2>Let's Connect</h2>
-        <p style="margin-bottom: 25px;">Available for internships and data-driven collaborations.</p>
-        <p><strong>Email:</strong> amyigbozuruike@gmail.com</p>
-        <p><strong>Phone:</strong> 08073557178</p>
-        <br>
-        <a href="mailto:amyigbozuruike@gmail.com" class="btn">Get In Touch</a>
-        <p style="margin-top: 50px; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 Amarachi Igbozuruike | Built with Precision</p>
+    <footer>
+        <p>&copy; 2026 Amarachi Igbozuruike | First-Class Honours | Data Analyst</p>
+        <p><small>Portfolio built with HTML/CSS focused on Data Science presentation.</small></p>
     </footer>
 
 </body>
 </html>
-```
