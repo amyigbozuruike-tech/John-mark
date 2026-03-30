@@ -1,183 +1,342 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amarachi Igbozuruike | Data Analyst Portfolio</title>
+    <style>
+        :root {
+            --wine: #722f37;
+            --wine-light: #8e3a45;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --gray: #333333;
+            --gradient: linear-gradient(135deg, #722f37 0%, #4a1e24 100%);
+        }
 
-<title>Amarachi Igbozuruike — Data Analyst</title>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&display=swap" rel="stylesheet">
+        body {
+            background-color: var(--white);
+            color: var(--gray);
+            line-height: 1.6;
+        }
 
-<style>
-:root {
-  --bg: #ffffff;
-  --surface: #fafafa;
-  --border: #eee;
-  --accent: #800020; /* wine */
-  --accent2: #a52a2a;
-  --text: #1a1a1a;
-  --muted: #666;
-  --card: #ffffff;
-}
+        header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
 
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'DM Mono', monospace;
-  cursor: none;
-}
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(114, 47, 55, 0.95);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
 
-/* CURSOR */
-.cursor {
-  width: 10px;
-  height: 10px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-}
-.cursor.expand { width: 30px; height: 30px; }
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
 
-/* NAV */
-nav {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-}
-.nav-logo { color: var(--accent); font-weight: bold; text-decoration: none; }
-.nav-links { display: flex; gap: 20px; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--muted); }
-.nav-links a:hover { color: var(--accent); }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-/* HERO */
-.hero {
-  min-height: 100vh;
-  padding: 120px 40px;
-}
-.hero-name {
-  font-size: 80px;
-}
-.hero-desc {
-  max-width: 500px;
-  margin: 20px 0;
-  color: var(--muted);
-}
-.btn {
-  padding: 12px 20px;
-  border: 1px solid var(--accent);
-  text-decoration: none;
-}
-.btn-primary {
-  background: var(--accent);
-  color: white;
-}
-.btn-outline {
-  color: var(--accent);
-}
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
 
-/* SECTION */
-section { padding: 80px 40px; }
-.section-title { font-size: 40px; margin-bottom: 40px; }
+        .section-title {
+            text-align: center;
+            color: var(--wine);
+            margin-bottom: 40px;
+            position: relative;
+        }
 
-/* PROJECT */
-.project-item {
-  border: 1px solid var(--border);
-  padding: 20px;
-  margin-bottom: 20px;
-}
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--wine);
+            margin: 10px auto;
+        }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-}
-</style>
+        .hero-content h1 {
+            font-size: 3rem;
+            [cite_start]margin-bottom: 10px; [cite: 2]
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            [cite_start]opacity: 0.9; [cite: 8]
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--wine);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: var(--off-white);
+            color: var(--wine);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.85rem;
+            border: 1px solid var(--wine);
+        }
+
+        .project-card {
+            background: var(--off-white);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            color: var(--wine);
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--wine);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--wine-light);
+        }
+
+        .footer {
+            background: var(--gray);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            text-align: center;
+            background: var(--off-white);
+            padding: 50px 20px;
+            border-radius: 15px;
+        }
+
+        /* Stats Section */
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 0;
+            background: var(--off-white);
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h2 {
+            color: var(--wine);
+            font-size: 2rem;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="cursor" id="cursor"></div>
+    <nav>
+        <div class="logo">AMARACHI.I</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-<nav>
-  <a href="#" class="nav-logo">AI</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+    <header>
+        <div class="hero-content">
+            [cite_start]<h1>Amarachi Chibuzor Igbozuruike</h1> [cite: 2]
+            <p>First-Class Food Scientist | Aspiring Data Analyst | [cite_start]Detail-Oriented Researcher</p> [cite: 8]
+        </div>
+    </header>
 
-<section class="hero">
-  <h1 class="hero-name">Amarachi <br><em>Igbozuruike</em></h1>
+    <div class="container" id="about">
+        <h2 class="section-title">Professional Summary</h2>
+        <div style="text-align: center; max-width: 800px; margin: auto;">
+            <p>
+                [cite_start]A detail-oriented and analytical First-Class Honours graduate from the Federal University of Technology, Owerri[cite: 8, 13]. 
+                [cite_start]Passionate about transforming complex data into actionable insights, I bridge the gap between scientific precision and data-driven decision-making[cite: 9]. 
+                [cite_start]With a background in Food Science and Technology, I bring a unique perspective to data handling, quality control, and technical reporting[cite: 8, 20].
+            </p>
+        </div>
 
-  <p class="hero-desc">
-  Aspiring Data Analyst skilled in Excel, Google Sheets, and Python. 
-  I transform raw data into clear insights that support smart decisions.
-  </p>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <h2>1st Class</h2>
+                [cite_start]<p>B.Tech Degree</p> [cite: 8]
+            </div>
+            <div class="stat-item">
+                <h2>3.9+</h2>
+                <p>Academic Excellence</p>
+            </div>
+            <div class="stat-item">
+                <h2>2026</h2>
+                <p>Projected Growth</p>
+            </div>
+        </div>
+    </div>
 
-  <a href="#projects" class="btn btn-primary">View Work</a>
-  <a href="mailto:amyigbozuruike@gmail.com" class="btn btn-outline">Contact Me</a>
-</section>
+    <section style="background: var(--off-white); padding: 60px 0;" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Data Analysis</h3>
+                    [cite_start]<p>Proficient in cleaning and interpreting complex datasets to find trends.</p> [cite: 17]
+                    <div style="margin-top: 15px;">
+                        [cite_start]<span class="skill-tag">Microsoft Excel</span> [cite: 17]
+                        [cite_start]<span class="skill-tag">Pivot Tables</span> [cite: 17]
+                        [cite_start]<span class="skill-tag">Google Sheets</span> [cite: 17]
+                        [cite_start]<span class="skill-tag">Data Cleaning</span> [cite: 17]
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Programming & Visualization</h3>
+                    [cite_start]<p>Leveraging modern tools to visualize findings and automate workflows.</p> [cite: 17]
+                    <div style="margin-top: 15px;">
+                        [cite_start]<span class="skill-tag">Basic Python</span> [cite: 17]
+                        [cite_start]<span class="skill-tag">Data Visualization</span> [cite: 17]
+                        [cite_start]<span class="skill-tag">Chart Design</span> [cite: 25]
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Laboratory & Research</h3>
+                    [cite_start]<p>Expertise in experimental analysis and structured technical reporting.</p> [cite: 20, 23]
+                    <div style="margin-top: 15px;">
+                        [cite_start]<span class="skill-tag">Quality Control</span> [cite: 20]
+                        [cite_start]<span class="skill-tag">Instrumental Analysis</span> [cite: 14]
+                        [cite_start]<span class="skill-tag">Experimental Design</span> [cite: 23]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="about">
-  <h2 class="section-title">About Me</h2>
+    <div class="container" id="projects">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="grid">
+            <div class="project-card">
+                <div class="project-info">
+                    [cite_start]<h3>Antioxidant Edible Film Research</h3> [cite: 22]
+                    [cite_start]<p>Conducted characterization of cellulose and data interpretation for plant extract-based films to enhance food shelf-life.</p> [cite: 22, 23]
+                    [cite_start]<span class="skill-tag">Experimental Analysis</span> [cite: 23]
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Sales Performance Dashboard</h3>
+                    <p>Designed an interactive Excel dashboard to track monthly revenue trends and regional performance for a retail dataset.</p>
+                    [cite_start]<span class="skill-tag">Excel Pivot Tables</span> [cite: 17, 25]
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Lodgemate User Analytics</h3>
+                    <p>Currently developing data models to analyze user engagement and accommodation matching efficiency for the Lodgemate app.</p>
+                    [cite_start]<span class="skill-tag">Python</span> [cite: 17]
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <p>
-  I am a graduate of Food Science and Technology with a strong passion for data analysis.
-  </p>
+    <section class="container" id="experience">
+        <h2 class="section-title">Experience & Leadership</h2>
+        <div class="card" style="margin-bottom: 20px;">
+            <h4 style="color: var(--wine);">Industrial Trainee | [cite_start]Sona Malting & Malt Derivatives</h4> [cite: 19]
+            <p><small>2024</small></p>
+            <ul>
+                [cite_start]<li>Analyzed raw materials and conducted pH, brix, and turbidity tests.</li> [cite: 20]
+                [cite_start]<li>Organized lab data for quality control audits.</li> [cite: 20]
+            </ul>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--wine);">Member, Student Representative Council | [cite_start]FUTO</h4> [cite: 27]
+            <p><small>2023 - 2024</small></p>
+            <ul>
+                [cite_start]<li>Coordinated administrative and budgeting tasks for student events.</li> [cite: 28]
+                [cite_start]<li>Assisted in organizing academic seminars and student coordination.</li> [cite: 28]
+            </ul>
+        </div>
+    </section>
 
-  <p>
-  I specialize in data cleaning, visualization, and identifying patterns that help businesses grow.
-  </p>
+    <div class="container" id="contact">
+        <div class="contact-info">
+            <h2 class="section-title">Get In Touch</h2>
+            [cite_start]<p>Open for Data Analyst Internships and Research Collaborations.</p> [cite: 9, 34]
+            <p style="margin-top: 20px;">
+                [cite_start]<strong>Email:</strong> amyigbozuruike@gmail.com <br> [cite: 4]
+                [cite_start]<strong>Phone:</strong> 08073557178 <br> [cite: 3]
+                [cite_start]<strong>Location:</strong> Sango Ota, Ogun State [cite: 5]
+            </p>
+            <a href="mailto:amyigbozuruike@gmail.com" class="btn">Send a Message</a>
+        </div>
+    </div>
 
-  <p>
-  I am continuously improving my skills and building real-world projects.
-  </p>
-</section>
-
-<section id="projects">
-  <h2 class="section-title">Projects</h2>
-
-  <div class="project-item">
-    <h3>Sales Dashboard</h3>
-    <p>Analyzed sales data using Excel dashboards.</p>
-  </div>
-
-  <div class="project-item">
-    <h3>Customer Analysis</h3>
-    <p>Used Google Sheets to identify trends.</p>
-  </div>
-
-  <div class="project-item">
-    <h3>Python Data Cleaning</h3>
-    <p>Cleaned datasets using Python.</p>
-  </div>
-
-</section>
-
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
-
-  <p>Email: amyigbozuruike@gmail.com</p>
-  <p>Phone: 08073557178</p>
-</section>
-
-<footer>
-  <p>© 2026 Amarachi Igbozuruike</p>
-</footer>
-
-<script>
-const cursor = document.getElementById('cursor');
-
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-});
-</script>
+    <div class="footer">
+        <p>&copy; 2026 Amarachi Igbozuruike. All Rights Reserved.</p>
+        <p><small>Designed with passion for Data & Science</small></p>
+    </div>
 
 </body>
 </html>
+```
