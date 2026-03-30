@@ -3,12 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Amarachi Igbozuruike — Data Analyst</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono&family=Fraunces&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&display=swap" rel="stylesheet">
 
 <style>
-/* KEEP YOUR ORIGINAL CSS HERE (NO CHANGE) */
+:root {
+  --bg: #ffffff;
+  --surface: #fafafa;
+  --border: #eee;
+  --accent: #800020; /* wine */
+  --accent2: #a52a2a;
+  --text: #1a1a1a;
+  --muted: #666;
+  --card: #ffffff;
+}
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  cursor: none;
+}
+
+/* CURSOR */
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+}
+.cursor.expand { width: 30px; height: 30px; }
+
+/* NAV */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+.nav-logo { color: var(--accent); font-weight: bold; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--muted); }
+.nav-links a:hover { color: var(--accent); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding: 120px 40px;
+}
+.hero-name {
+  font-size: 80px;
+}
+.hero-desc {
+  max-width: 500px;
+  margin: 20px 0;
+  color: var(--muted);
+}
+.btn {
+  padding: 12px 20px;
+  border: 1px solid var(--accent);
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+.btn-outline {
+  color: var(--accent);
+}
+
+/* SECTION */
+section { padding: 80px 40px; }
+.section-title { font-size: 40px; margin-bottom: 40px; }
+
+/* PROJECT */
+.project-item {
+  border: 1px solid var(--border);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+}
 </style>
 </head>
 
@@ -16,224 +102,81 @@
 
 <div class="cursor" id="cursor"></div>
 
-<nav id="nav">
+<nav>
   <a href="#" class="nav-logo">AI</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-badge">Open to Internship Opportunities</div>
-
-  <h1 class="hero-name">
-    Amarachi<br><em>Igbozuruike</em>
-  </h1>
+  <h1 class="hero-name">Amarachi <br><em>Igbozuruike</em></h1>
 
   <p class="hero-desc">
-    Aspiring Data Analyst with a First-Class degree in Food Science and Technology, passionate about turning raw data into meaningful insights. 
-    Skilled in Excel, Google Sheets, and Python, with hands-on experience in data cleaning, visualization, and reporting.
+  Aspiring Data Analyst skilled in Excel, Google Sheets, and Python. 
+  I transform raw data into clear insights that support smart decisions.
   </p>
 
-  <div class="hero-cta">
-    <a href="#projects" class="btn btn-primary">View My Work →</a>
-    <a href="mailto:amyigbozuruike@gmail.com" class="btn btn-outline">Get In Touch</a>
-  </div>
+  <a href="#projects" class="btn btn-primary">View Work</a>
+  <a href="mailto:amyigbozuruike@gmail.com" class="btn btn-outline">Contact Me</a>
 </section>
 
 <section id="about">
-  <div class="container">
-    <div class="section-tag">Who I Am</div>
+  <h2 class="section-title">About Me</h2>
 
-    <div class="about-grid">
-      <div class="about-text">
-        <h2 class="section-title">Turning data into<br><em>clear decisions.</em></h2>
+  <p>
+  I am a graduate of Food Science and Technology with a strong passion for data analysis.
+  </p>
 
-        <p>
-          I am a highly analytical graduate from Federal University of Technology, Owerri (FUTO), with a passion for solving problems using data.
-        </p>
+  <p>
+  I specialize in data cleaning, visualization, and identifying patterns that help businesses grow.
+  </p>
 
-        <p>
-          I specialize in <strong>data cleaning, exploratory analysis, and visualization</strong>, helping to uncover trends and patterns that support informed decision-making.
-        </p>
-
-        <p>
-          I enjoy working with datasets, building dashboards, and presenting insights in a clear and simple way. I am continuously learning and improving my skills in Python and data analytics tools.
-        </p>
-      </div>
-
-      <div>
-        <div class="skills-grid reveal">
-
-          <div class="skill-item">
-            <div class="skill-name">Microsoft Excel</div>
-            <div class="skill-bar"><div class="skill-bar-fill accent2" data-width="92"></div></div>
-          </div>
-
-          <div class="skill-item">
-            <div class="skill-name">Google Sheets</div>
-            <div class="skill-bar"><div class="skill-bar-fill accent2" data-width="88"></div></div>
-          </div>
-
-          <div class="skill-item">
-            <div class="skill-name">Python</div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="65"></div></div>
-          </div>
-
-          <div class="skill-item">
-            <div class="skill-name">Data Visualization</div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
+  <p>
+  I am continuously improving my skills and building real-world projects.
+  </p>
 </section>
 
 <section id="projects">
-  <div class="container">
-    <div class="section-tag">Selected Work</div>
-    <h2 class="section-title">Projects & Practical Work</h2>
+  <h2 class="section-title">Projects</h2>
 
-    <div class="projects-list">
-
-      <div class="project-item reveal">
-        <div class="project-num">01</div>
-        <div class="project-info">
-          <div class="project-title">Sales Data Analysis Dashboard</div>
-          <div class="project-desc">
-            Designed an interactive Excel dashboard using pivot tables and charts to analyze sales trends, identify top-performing products, and support business insights.
-          </div>
-        </div>
-        <div class="project-tags">
-          <span class="tag">Excel</span>
-          <span class="tag">Dashboard</span>
-        </div>
-      </div>
-
-      <div class="project-item reveal">
-        <div class="project-num">02</div>
-        <div class="project-info">
-          <div class="project-title">Customer Data Analysis</div>
-          <div class="project-desc">
-            Cleaned and analyzed customer datasets using Google Sheets to identify patterns and generate insights through charts and data summaries.
-          </div>
-        </div>
-        <div class="project-tags">
-          <span class="tag">Google Sheets</span>
-          <span class="tag">Analysis</span>
-        </div>
-      </div>
-
-      <div class="project-item reveal">
-        <div class="project-num">03</div>
-        <div class="project-info">
-          <div class="project-title">Python Data Cleaning Project</div>
-          <div class="project-desc">
-            Performed data cleaning and preprocessing using Python, handling missing values and preparing datasets for analysis.
-          </div>
-        </div>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Data Cleaning</span>
-        </div>
-      </div>
-
-    </div>
+  <div class="project-item">
+    <h3>Sales Dashboard</h3>
+    <p>Analyzed sales data using Excel dashboards.</p>
   </div>
+
+  <div class="project-item">
+    <h3>Customer Analysis</h3>
+    <p>Used Google Sheets to identify trends.</p>
+  </div>
+
+  <div class="project-item">
+    <h3>Python Data Cleaning</h3>
+    <p>Cleaned datasets using Python.</p>
+  </div>
+
 </section>
 
-<section id="experience">
-  <div class="container">
-    <div class="section-tag">Career</div>
-    <h2 class="section-title">Experience & Activities</h2>
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
 
-    <div class="exp-list">
-
-      <div class="exp-item reveal">
-        <div class="exp-date">2024</div>
-        <div>
-          <div class="exp-role">Industrial Trainee</div>
-          <div class="exp-company">Sona Malting & Malt Derivatives Ltd</div>
-          <div class="exp-desc">
-            Assisted in laboratory data analysis, performed quality control tests (pH, turbidity, color), and maintained accurate data records for reporting.
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-item reveal">
-        <div class="exp-date">2023 - 2024</div>
-        <div>
-          <div class="exp-role">Student Representative Council Member</div>
-          <div class="exp-company">FUTO</div>
-          <div class="exp-desc">
-            Collaborated with team members to organize academic activities, manage student coordination, and support planning processes.
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-item reveal">
-        <div class="exp-date">2025</div>
-        <div>
-          <div class="exp-role">Research Project</div>
-          <div class="exp-company">Final Year Project</div>
-          <div class="exp-desc">
-            Conducted experimental analysis and interpreted research data, presenting findings using structured and data-driven reporting techniques.
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="contact" style="background: var(--surface); border-top: 1px solid var(--border);">
-  <div class="container">
-    <div class="contact-wrapper">
-
-      <div class="contact-info reveal">
-        <div class="section-tag">Contact</div>
-
-        <h2 class="contact-title">
-          Let’s work<br>together.
-        </h2>
-
-        <p class="contact-sub">
-          I am open to internships and opportunities where I can apply my data skills and continue learning.
-        </p>
-
-        <div class="contact-links">
-
-          <a href="mailto:amyigbozuruike@gmail.com" class="contact-link">
-            amyigbozuruike@gmail.com <span>Email ↗</span>
-          </a>
-
-          <a href="#" class="contact-link">
-            08073557178 <span>Phone ↗</span>
-          </a>
-
-          <a href="#" class="contact-link">
-            LinkedIn: Amarachi Igbozuruike <span>Profile ↗</span>
-          </a>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
+  <p>Email: amyigbozuruike@gmail.com</p>
+  <p>Phone: 08073557178</p>
 </section>
 
 <footer>
-  <div class="footer-copy">© 2026 Amarachi Igbozuruike</div>
+  <p>© 2026 Amarachi Igbozuruike</p>
 </footer>
 
 <script>
-/* KEEP YOUR ORIGINAL JS HERE */
+const cursor = document.getElementById('cursor');
+
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
 </script>
 
 </body>
